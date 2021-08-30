@@ -1,0 +1,25 @@
+version: "3"
+services:
+  frontend:
+    image: swathip123/app:v1
+    container_name: react
+    command: sh -c "
+        npm start"
+        
+    stdin_open: true
+    ports:
+      - "3000:3000"
+
+  springboot:
+    image: swathip123/web:v1
+    container_name: springboot
+    command: bash -c "
+        mvn spring-boot:run"
+    ports:
+    - "8080:8080"
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+    - "27019:27017"
