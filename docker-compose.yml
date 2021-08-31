@@ -1,14 +1,14 @@
 version: "3.0"
 services:
   frontend:
-    image: pavanvere/frontend:latest
+    image: swathip123/app:v2
     container_name: react
     stdin_open: true
     ports:
       - "3001:3000"
 
   springboot:
-    image: pavanvere/springboot:latest
+    image: swathip123/web:v5
     container_name: springboot
     ports:
     - "8080:8080"
